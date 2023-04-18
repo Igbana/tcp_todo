@@ -1,0 +1,33 @@
+<HomePage>:
+	task_lst: task_lst
+	completed_lbl: completed_lbl
+	MDIconButton:
+		icon: 'dots-vertical'
+		pos_hint: {'right': 1, 'top': 1}
+	MDBoxLayout:
+		orientation: 'vertical'
+		padding: dp(20), dp(0)
+		spacing: dp(10)
+		Widget:
+			size_hint_y: None
+			height: dp(48)
+		MDLabel:
+			text: "To-dos"
+			font_size: sp(36)
+			adaptive_height: True
+		EntryBox:
+			pos_hint: {'center_x': 0.5}
+			
+		ScrollView:
+			MDList:
+				id: task_lst
+				spacing: dp(10)
+				MDLabel:
+					id: completed_lbl
+					text: 'Completed'
+					size_hint_y: None
+					height: dp(20)
+	MDFloatingActionButton:
+		pos_hint: {'center_x': 0.5, 'y': 0.06}
+		icon: 'plus'
+		on_release: root.popup()
